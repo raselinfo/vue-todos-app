@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       inputData: "",
-      heroList: JSON.parse(localStorage.getItem("heros")),
+      heroList: JSON.parse(localStorage.getItem("heros")) || [],
       message: {
         error: "",
         success: "",
@@ -34,10 +34,8 @@ export default {
     };
   },
   computed: {
-    getHerosLength() {
-      
-        return this.heroList.length;
-     
+    getHerosLength() {      
+        return this.heroList.length;     
     },
   },
   methods: {
