@@ -1,6 +1,8 @@
 <template>
   <div class="todos__wrapper">
-    <h1 class="heading">Populer Heros {{ getHerosLength }}</h1>
+    <h1 class="heading">
+      Populer Heros <span v-text="`${heroList.length > 0 ? getHerosLength : ''}`"></span>
+    </h1>
     <div class="todos__body">
       <p class="message">{{ message.error }}</p>
       <p class="message">{{ message.success }}</p>
@@ -34,8 +36,8 @@ export default {
     };
   },
   computed: {
-    getHerosLength() {      
-        return this.heroList.length;     
+    getHerosLength() {
+      return this.heroList.length;
     },
   },
   methods: {
@@ -74,7 +76,7 @@ export default {
 </script>
 
 <style>
-span {
+ul>li span {
   cursor: pointer;
   background: red;
   width: 20px;
@@ -93,7 +95,7 @@ span {
   margin: 100px auto;
   padding: 10px;
   border-radius: 10px;
-  box-shadow:0px 0px 5px 5px whitesmoke;
+  box-shadow: 0px 0px 5px 5px whitesmoke;
 }
 .heading {
   text-align: center;
@@ -131,8 +133,8 @@ button {
 .message {
   margin-bottom: 5px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size:20px;
-  font-weight:bolder;
-  text-align:center;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
 }
 </style>
